@@ -1,8 +1,8 @@
 # api-poc-challenge
 
-you'll need:
+__you'll need:__
 
-python
-python ide
+* python
+* python ide
 
-dont forget to check the requirements.txt
+__dont forget to check the requirements.txt
