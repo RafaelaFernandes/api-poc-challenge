@@ -39,8 +39,8 @@ class TestsNegativos:
 
         response_data = response.json()
 
-        assert (response.status_code == 400)
-        assert (response_data["statusCode"] == 400)
+        assert(response.status_code == 400)
+        assert(response_data["statusCode"] == 400)
 
         pretty_print_request(response.request)
         pretty_print_response(response)
@@ -51,8 +51,8 @@ class TestsNegativos:
 
         response_data = response.json()
 
-        assert (response.status_code == 400)
-        assert (response_data["statusCode"] == 400)
+        assert(response.status_code == 400)
+        assert(response_data["statusCode"] == 400)
 
         pretty_print_request(response.request)
         pretty_print_response(response)
@@ -63,8 +63,8 @@ class TestsNegativos:
 
         response_data = response.json()
 
-        assert (response.status_code == 400)
-        assert (response_data["statusCode"] == 400)
+        assert(response.status_code == 400)
+        assert(response_data["statusCode"] == 400)
 
         pretty_print_request(response.request)
         pretty_print_response(response)
@@ -75,20 +75,20 @@ class TestsNegativos:
 
         response_data = response.json()
 
-        assert (response.status_code == 400)
-        assert (response_data["statusCode"] == 400)
+        assert(response.status_code == 400)
+        assert(response_data["statusCode"] == 400)
 
         pretty_print_request(response.request)
         pretty_print_response(response)
 
-    def test_XSS(self):
+    def test_xss(self):
         payload = LambdaPayload("Mensagem de teste", "<script>alert(123);</script>")
         response = requests.request("POST", LAMBDA_URL, headers=payload.header, json=payload.body)
 
         response_data = response.json()
 
-        assert (response.status_code == 400)
-        assert (response_data["statusCode"] == 400)
+        assert(response.status_code == 400)
+        assert(response_data["statusCode"] == 400)
 
         pretty_print_request(response.request)
         pretty_print_response(response)
